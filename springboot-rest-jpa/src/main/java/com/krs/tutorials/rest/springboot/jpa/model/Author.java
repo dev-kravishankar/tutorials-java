@@ -20,6 +20,15 @@ public class Author {
 	private String firstName;
 	private String lastName;
 
+	public Author() {
+
+	}
+
+	public Author(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
@@ -44,6 +53,11 @@ public class Author {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	@Override
+	public String toString() {
+		return "Author: {First Name: " + firstName + ", Last Name: " + lastName + "}";
 	}
 
 }
